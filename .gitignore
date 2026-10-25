@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local datasets and sensitive capture (never commit originals)
+/data/raw/
+/data/private/
+/public/signs/raw/
+*.task.bak
+credentials*.json
+service-account*.json

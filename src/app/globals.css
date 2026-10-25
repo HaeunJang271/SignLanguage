@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f7f8;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --accent: #0f766e;
+  --accent-soft: #ccfbf1;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --hero-top: #dce8ea;
+  --hero-bottom: #f4f7f8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.08), transparent 40%),
+    linear-gradient(180deg, var(--hero-top), var(--hero-bottom));
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), "Noto Sans KR", sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), "Source Serif 4", serif;
+  letter-spacing: -0.02em;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
